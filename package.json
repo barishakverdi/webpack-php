@@ -5,16 +5,16 @@
   "type": "module",
   "scripts": {
     "dev": "webpack --watch --mode development",
-    "build:tailwind": "npx tailwindcss -i ./src/style/tailwind.css -o ./public/assets/tailwind.min.css --minify",
-    "build:style": "npx tailwindcss -i ./src/style/style.css -o ./public/assets/style.min.css --minify",
+    "build:tailwind": "npx tailwindcss -i ./src/style/tailwind.css -o ./public/assets/tailwind.css --minify",
+    "build:style": "npx tailwindcss -i ./src/style/style.css -o ./public/assets/style.css --minify",
     "watch:tailwind": "npx tailwindcss -i ./src/style/tailwind.css -o ./public/assets/tailwind.css --watch",
     "watch:style": "npx tailwindcss -i ./src/style/style.css -o ./public/assets/style.css --watch",
     "build:update-link": "MODE=build node update-link.cjs",
     "watch:update-link": "MODE=watch node update-link.cjs",
     "clean:build": "MODE=build node clean-css.cjs",
     "clean:watch": "MODE=watch node clean-css.cjs",
-    "build": "npm run clean:build && npm run build:update-link && npm run build:tailwind && npm run build:style && NODE_ENV=production webpack --config webpack.config.cjs --mode production",
-    "watch": "npm run clean:watch && npm run watch:update-link && concurrently \"npm run dev\" \"npm run watch:tailwind\" \"npm run watch:style\""
+    "build": "npm run build:tailwind && npm run build:style && NODE_ENV=production webpack --config webpack.config.cjs --mode production",
+    "watch": "concurrently \"npm run dev\" \"npm run watch:tailwind\" \"npm run watch:style\""
   },
   "devDependencies": {
     "@babel/preset-env": "^7.25.3",

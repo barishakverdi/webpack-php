@@ -1,9 +1,6 @@
-<?php // Variables
-
-// public assets path
-$assets = '/public/assets/';
+<?php // public assets path
+$assets = '../../public/assets/';
 ?>
-
 <!doctype html>
 <html lang="tr">
 <head>
@@ -13,8 +10,8 @@ $assets = '/public/assets/';
     <title>Title</title>
     <meta name="description" content="Description of page" />
     <meta name="keywords" content="site, website, logo"/>
-    <link rel="stylesheet" href="/public/assets/tailwind.css">
-    <link rel="stylesheet" href="/public/assets/style.css">
-    <script src="/public/assets/bundle.js" type="module"></script>
+    <link rel="stylesheet" href="<?= $assets ?>tailwind.css">
+    <link rel="stylesheet" href="<?= $assets ?>style.css">
+    <script src="<?= $assets ?>bundle.js" type="module"></script>
 </head>
 <body class="overflow-x-hidden">
