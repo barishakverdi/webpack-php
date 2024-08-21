@@ -4,17 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "postinstall": "cp -R node_modules/starter-icons/webfonts public/assets",
     "dev": "webpack --watch --mode development",
     "build:tailwind": "npx tailwindcss -i ./src/style/tailwind.css -o ./public/assets/tailwind.css --minify",
     "build:style": "npx tailwindcss -i ./src/style/style.css -o ./public/assets/style.css --minify",
     "watch:tailwind": "npx tailwindcss -i ./src/style/tailwind.css -o ./public/assets/tailwind.css --watch",
     "watch:style": "npx tailwindcss -i ./src/style/style.css -o ./public/assets/style.css --watch",
-    "build:update-link": "MODE=build node update-link.cjs",
-    "watch:update-link": "MODE=watch node update-link.cjs",
-    "clean:build": "MODE=build node clean-css.cjs",
-    "clean:watch": "MODE=watch node clean-css.cjs",
+    "watch:sass": "sass --watch --style=compressed ./src/style/icons.scss ./public/assets/icons.css",
     "build": "npm run build:tailwind && npm run build:style && NODE_ENV=production webpack --config webpack.config.cjs --mode production",
-    "watch": "concurrently \"npm run dev\" \"npm run watch:tailwind\" \"npm run watch:style\""
+    "watch": "concurrently \"npm run dev\" \"npm run watch:tailwind\" \"npm run watch:style\" \"npm run watch:sass\""
   },
   "devDependencies": {
     "@babel/preset-env": "^7.25.3",
@@ -23,6 +21,7 @@
     "browser-sync": "^3.0.2",
     "browser-sync-webpack-plugin": "^2.3.0",
     "concurrently": "^8.2.2",
+    "cpy": "^11.1.0",
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.9.0",
@@ -30,6 +29,7 @@
     "postcss-loader": "^8.1.1",
     "sass": "^1.77.8",
     "sass-loader": "^16.0.0",
+    "starter-icons": "1.1.5",
     "style-loader": "^4.0.0",
     "tailwindcss": "^3.4.10",
     "webpack": "^5.93.0",

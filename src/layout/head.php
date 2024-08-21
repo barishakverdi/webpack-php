@@ -12,6 +12,7 @@ $assets = '../../public/assets/';
     <meta name="keywords" content="site, website, logo"/>
     <link rel="stylesheet" href="<?= $assets ?>tailwind.css">
     <link rel="stylesheet" href="<?= $assets ?>style.css">
+    <link rel="stylesheet" href="<?= $assets ?>icons.css">
     <script src="<?= $assets ?>bundle.js" type="module"></script>
 </head>
 <body class="overflow-x-hidden">

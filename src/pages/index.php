@@ -4,6 +4,7 @@
             <div class="container">
                 merhaba
                 <img src="<?= $assets ?>images/tadic.jpg" alt="" width="1280" height="853">
+                <i class="fa-light fa-drone"></i>
             </div>
         </section>
     </main>
