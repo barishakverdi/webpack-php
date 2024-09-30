@@ -1,3 +1,113 @@
-body {
-    @apply bg-primary text-white;
+@import "../../node_modules/@fancyapps/ui/dist/fancybox/fancybox.css";
+@import "../../node_modules/swiper/swiper.min.css";
+/* @import "../../node_modules/swiper/modules/grid.min.css"; */
+/*@import "../../node_modules/swiper/modules/scrollbar.min.css";*/
+/*@import "../../node_modules/swiper/modules/scrollbar-element.min.css";*/
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('/public/assets/fonts/Figtree-Italic.eot');
+    src: url('/public/assets/fonts/Figtree-Italic.eot?#iefix') format('embedded-opentype'),
+    url('/public/assets/fonts/Figtree-Italic.woff2') format('woff2'),
+    url('/public/assets/fonts/Figtree-Italic.woff') format('woff'),
+    url('/public/assets/fonts/Figtree-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
 }
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('/public/assets/fonts/Figtree-Bold.eot');
+    src: url('/public/assets/fonts/Figtree-Bold.eot?#iefix') format('embedded-opentype'),
+    url('/public/assets/fonts/Figtree-Bold.woff2') format('woff2'),
+    url('/public/assets/fonts/Figtree-Bold.woff') format('woff'),
+    url('/public/assets/fonts/Figtree-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('/public/assets/fonts/Figtree-SemiBoldItalic.eot');
+    src: url('/public/assets/fonts/Figtree-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('/public/assets/fonts/Figtree-SemiBoldItalic.woff2') format('woff2'),
+    url('/public/assets/fonts/Figtree-SemiBoldItalic.woff') format('woff'),
+    url('/public/assets/fonts/Figtree-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('/public/assets/fonts/Figtree-MediumItalic.eot');
+    src: url('/public/assets/fonts/Figtree-MediumItalic.eot?#iefix') format('embedded-opentype'),
+    url('/public/assets/fonts/Figtree-MediumItalic.woff2') format('woff2'),
+    url('/public/assets/fonts/Figtree-MediumItalic.woff') format('woff'),
+    url('/public/assets/fonts/Figtree-MediumItalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('/public/assets/fonts/Figtree-SemiBold.eot');
+    src: url('/public/assets/fonts/Figtree-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('/public/assets/fonts/Figtree-SemiBold.woff2') format('woff2'),
+    url('/public/assets/fonts/Figtree-SemiBold.woff') format('woff'),
+    url('/public/assets/fonts/Figtree-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('/public/assets/fonts/Figtree-Medium.eot');
+    src: url('/public/assets/fonts/Figtree-Medium.eot?#iefix') format('embedded-opentype'),
+    url('/public/assets/fonts/Figtree-Medium.woff2') format('woff2'),
+    url('/public/assets/fonts/Figtree-Medium.woff') format('woff'),
+    url('/public/assets/fonts/Figtree-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('/public/assets/fonts/Figtree-BoldItalic.eot');
+    src: url('/public/assets/fonts/Figtree-BoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('/public/assets/fonts/Figtree-BoldItalic.woff2') format('woff2'),
+    url('/public/assets/fonts/Figtree-BoldItalic.woff') format('woff'),
+    url('/public/assets/fonts/Figtree-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Figtree';
+    src: url('/public/assets/fonts/Figtree-Regular.eot');
+    src: url('/public/assets/fonts/Figtree-Regular.eot?#iefix') format('embedded-opentype'),
+    url('/public/assets/fonts/Figtree-Regular.woff2') format('woff2'),
+    url('/public/assets/fonts/Figtree-Regular.woff') format('woff'),
+    url('/public/assets/fonts/Figtree-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    @apply bg-white text-black;
+}
+
+::selection {
+    background: theme('colors.primary.900 / 15%');
+    color: theme('colors.primary.900');
+}
+
+input, form, table, select, textarea, button { @apply text-[100%] leading-normal rounded-none !appearance-none resize-none outline-none border-none bg-transparent; }
+*, *:focus, *:focus-visible, *:hover, *:active, *::before, *::after { @apply !outline-none; }

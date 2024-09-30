@@ -1,5 +1,5 @@
 module.exports = {
-    content: ['./src/**/*.{html,php,js}', './public/**/*.html'],
+    content: ['./src/**/*.{php,js}', './*.php', './doktor/**/*.php', './includes/**/*.php', './public/**/*.html'],
     theme: {
         screens: {
             'min-3xl': {'min': '1681px'},
@@ -47,35 +47,61 @@ module.exports = {
             colors: {
                 transparent: 'transparent',
                 current: 'currentColor',
-                'bodyBackgroundColor': '#fefefe',
                 'white': '#ffffff',
                 'black': '#000000',
-                'cookie': '#000000',
                 'primary': {
-                    DEFAULT: '#7d91b3',
-                    '50': '#f5f6fa',
-                    '100': '#ebedf3',
-                    '200': '#d2d8e5',
-                    '300': '#abb8ce',
-                    '400': '#7d91b3',
-                    '500': '#5d739a',
-                    '600': '#495b80',
-                    '700': '#3c4a68',
-                    '800': '#354057',
-                    '900': '#1c212c',
+                    DEFAULT: '#2E4074',
+                    '50': '#EEF1F8',
+                    '100': '#CDD5EB',
+                    '200': '#ACB9DE',
+                    '300': '#8B9DD1',
+                    '400': '#6A81C4',
+                    '500': '#4965B6',
+                    '600': '#3B5295',
+                    '700': '#2E4074',
+                    '800': '#212E53',
+                    '900': '#141B32',
+                    '950': '#070911'
                 },
-                'red': {
-                    400: "#ef4950",
-                    500: "#eb1c24",
-                    600: "#bc161d",
+                'secondary': {
+                    DEFAULT: '#B149E4',
+                    '50': '#F6EBFC',
+                    '100': '#E5C2F6',
+                    '200': '#D49AF0',
+                    '300': '#C272EA',
+                    '400': '#B149E4',
+                    '500': '#A021DE',
+                    '600': '#821BB6',
+                    '700': '#65158D',
+                    '800': '#480F65',
+                    '900': '#2B093D',
+                    '950': '#0E0314'
                 },
+                'gray': {
+                    DEFAULT: '#ADB5BD',
+                    '50': '#F8F9FA',
+                    '100': '#E9ECEF',
+                    '200': '#DEE2E6',
+                    '300': '#CED4DA',
+                    '400': '#ADB5BD',
+                    '500': '#6C757D',
+                    '600': '#495057',
+                    '700': '#343A40',
+                    '800': '#212529',
+                    '900': '#1B1D20',
+                    '950': '#121314'
+                }
             },
             fontFamily: {
-                sans : ['Inter Variable', 'sans-serif']
+                sans : ['Figtree', 'sans-serif']
             },
             container: {
                 center: true,
-                padding: "15px",
+                padding: "24px",
+            },
+            borderRadius: {
+                xl: '20px',
+                lg: '12px'
             },
             opacity: generateOpacityRange(1, 100),
             zIndex: generateZIndexRange(1, 100),
@@ -91,15 +117,23 @@ module.exports = {
                 gradient: {
                     'from': { backgroundPosition: '0 50%' },
                     'to': { backgroundPosition: '200% 50%'},
-
+                },
+                shadowPulse: {
+                    from: { boxShadow: "0 0 0 0 rgba(37, 211, 102, 0.2)"},
+                    "70%": { boxShadow: "0 0 0 10px rgba(37, 211, 102, 0)"},
+                    to: { boxShadow: "0 0 0 0 rgba(37, 211, 102, 0)"}
                 }
             },
             animation: {
-                'gradient': 'gradient 8s ease infinite'
+                'gradient': 'gradient 8s ease infinite',
+                "shadowPulse": "shadowPulse 2s infinite",
             },
         },
     },
-    plugins: [],
+    plugins: [
+        require("@igorkowalczyk/is-browser"),
+        require('tailwind-scrollbar')({ preferredStrategy: 'pseudoelements', nocompatible: true })
+    ],
 };
 
 // Generate Opacities

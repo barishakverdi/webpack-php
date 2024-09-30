@@ -38,13 +38,13 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: 'tailwind.css',
+            filename: 'style.css',
         }),
         new BrowserSyncPlugin(
             {
                 host: 'localhost',
                 port: 3000,
-                proxy: 'https://localhost/webpack-php',
+                proxy: 'localhost:8080',
                 open: false,
                 files: [
                     {
@@ -63,7 +63,8 @@ module.exports = {
                 ]
             },
             {
-                reload: false
+                reload: false,
+                notify: false,
             }
         )
     ],

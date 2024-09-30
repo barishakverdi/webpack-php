@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "postinstall": "cp -R node_modules/starter-icons/webfonts public/assets",
+    "postinstall": "cp -R node_modules/starter-icons/webfonts public/assets/starter-icons",
     "dev": "webpack --watch --mode development",
     "build:tailwind": "npx tailwindcss -i ./src/style/tailwind.css -o ./public/assets/tailwind.css --minify",
     "build:style": "npx tailwindcss -i ./src/style/style.css -o ./public/assets/style.css --minify",
@@ -22,11 +22,10 @@
     "browser-sync": "^3.0.2",
     "browser-sync-webpack-plugin": "^2.3.0",
     "concurrently": "^8.2.2",
-    "cpy": "^11.1.0",
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.9.0",
-    "postcss": "^8.4.41",
+    "postcss": "^8.4.44",
     "postcss-loader": "^8.1.1",
     "sass": "^1.77.8",
     "sass-loader": "^16.0.0",
@@ -38,8 +37,11 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
+    "@fancyapps/ui": "^5.0.36",
+    "@igorkowalczyk/is-browser": "^5.0.4",
     "gsap": "^3.12.5",
     "scrollreveal": "^4.0.9",
-    "swiper": "^11.1.9"
+    "swiper": "^11.1.9",
+    "tailwind-scrollbar": "^3.1.0"
   }
 }

@@ -1,3 +1,58 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+    .text-h1 {
+        @apply text-[64px] 2xl:text-[50px] lg:text-[40px] md:text-[32px] leading-[1.25] tracking-[-2.56px] xl:tracking-[-1.56px] lg:tracking-[-1px];
+    }
+    .text-h2 {
+        @apply text-[50px] 2xl:text-[40px] lg:text-[32px] md:text-[28px] leading-[1.28] tracking-[-1px] lg:tracking-[-0.5px];
+    }
+    .text-h3 {
+        @apply text-[40px] 2xl:text-[32px] lg:text-[28px] md:text-[24px] leading-[1.25] tracking-[-0.8px] lg:tracking-[-0.4px];
+    }
+    .text-h4 {
+        @apply text-[32px] 2xl:text-[28px] lg:text-[24px] md:text-[20px] leading-[1.25] tracking-[-0.64px] lg:tracking-[-0.32px];
+    }
+    .text-h5 {
+        @apply text-[24px] 2xl:text-[22px] lg:text-[18px] leading-[1.33] tracking-[-0.48px] lg:tracking-[-0.12px];
+    }
+    .text-h6 {
+        @apply text-[20px] 2xl:text-[18px] leading-[1.60] tracking-[-0.4px];
+    }
+    .text-paragraph {
+        @apply text-[18px] lg:text-[17px] leading-[1.66] tracking-[-0.18px];
+    }
+    .text-menu-item {
+        @apply text-[16px] leading-[1.11] tracking-[-0.18px];
+    }
+    .text-small {
+        @apply text-[14px] leading-[1.28] tracking-[-0.14px];
+    }
+    .text-button {
+        @apply text-[18px] sm:text-[17px] leading-[1.11] tracking-[-0.27px] font-medium;
+    }
+    .site-container {
+        @apply container max-w-[1569px];
+    }
+
+    /* // Columns  */
+    .col-1 { @apply w-1/12; }
+    .col-2 { @apply w-2/12; }
+    .col-3 { @apply w-3/12; }
+    .col-4 { @apply w-4/12; }
+    .col-5 { @apply w-5/12; }
+    .col-6 { @apply w-6/12; }
+    .col-7 { @apply w-7/12; }
+    .col-8 { @apply w-8/12; }
+    .col-9 { @apply w-9/12; }
+    .col-10 { @apply w-10/12; }
+    .col-11 { @apply w-11/12; }
+    .col-12 { @apply w-full; }
+    .row { @apply w-full flex flex-row flex-wrap min-lg:-mx-3 min-sm:[&_>_*]:px-3; }
+
+    .flex-center {
+        @apply flex items-center justify-center;
+    }
+}
