@@ -7,6 +7,13 @@
                 <i class="fa-light fa-drone"></i>
                 <p>dwuaıh</p>
                 <p>dwaidhgaiuwd</p>
+                <p>dwaidhgaiuwd</p>
+                <p>dwaidhgaiuwd</p>
+                <p>dwaidhgaiuwd</p>
+                <p>dwaidhgaiuwd</p>
+                <p>dwaidhgaiuwd</p>
+                <p>dwaidhgaiuwd</p>
+                <p>dwaidhgaiuwd</p>
             </div>
         </section>
     </main>
