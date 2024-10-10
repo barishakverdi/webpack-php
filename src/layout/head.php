@@ -1,5 +1,6 @@
 <?php // public assets path
 $assets =  '/public/assets/';
+$protocol = isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] === 'on' || $_SERVER['HTTPS'] === 1) || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ? 'https://' : 'http://';
 ?>
 <!doctype html>
 <html lang="tr">
@@ -14,7 +15,7 @@ $assets =  '/public/assets/';
         /* to prevent Firefox FOUC, this must be here */
         let FF_FOUC_FIX;
     </script>
-    <base href="<?= $_SERVER['SERVER_NAME'] == "localhost" ? "localhost" : $_SERVER['SERVER_NAME'] ?>">
+    <base href="<?= $_SERVER['SERVER_NAME'] == "localhost" ? "localhost" : $protocol . $_SERVER['SERVER_NAME'] ?>">
     <link rel="stylesheet" href="<?= $assets ?>tailwind.css">
     <link rel="stylesheet" href="<?= $assets ?>style.css">
     <link rel="stylesheet" href="<?= $assets ?>icons.css">
@@ -33,4 +34,6 @@ $assets =  '/public/assets/';
 </head>
 <body class="group/body overflow-x-hidden" style="visibility: hidden">
 <script>0</script>
+
+<?= $_SERVER["SERVER_PROTOCOL"] ?>
 
