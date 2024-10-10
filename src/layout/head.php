@@ -1,5 +1,5 @@
 <?php // public assets path
-$assets = '../../public/assets/';
+$assets =  '/public/assets/';
 ?>
 <!doctype html>
 <html lang="tr">
