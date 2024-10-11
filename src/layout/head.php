@@ -32,6 +32,6 @@ $protocol = isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] === 'on' || $_SERVER[
         });
     </script>
 </head>
-<body class="group/body overflow-x-hidden bg-black h-full" style="visibility: hidden">
+<body class="group/body overflow-x-hidden bg-[blue] h-full" style="visibility: hidden">
 <script>0</script>
 
