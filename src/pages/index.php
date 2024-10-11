@@ -1,19 +1,12 @@
 <?php include '../layout/header.php'; ?>
-    <main class="text-black text-2xl">
+    <main class="text-black text-2xl bg-black text-white">
         <section>
             <div class="container">
-                merhaba
-                <img src="<?= $assets ?>images/tadic.jpg" alt="" width="1280" height="853">
+                <img src="<?= $assets ?>images/tadic.jpg" alt="" width="1280" height="853" class="mb-10">
                 <i class="fa-light fa-drone"></i>
                 <p>dwuaıh</p>
-                <p>dwaidhgaiuwd</p>
-                <p>dwaidhgaiuwd</p>
-                <p>dwaidhgaiuwd</p>
-                <p>dwaidhgaiuwd</p>
-                <p>dwaidhgaiuwd</p>
-                <p>dwaidhgaiuwd</p>
-                <p>dwaidhgaiuwd</p>
-                <p>dwaidhgaiuwd</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A amet aperiam consequuntur dolorum ducimus
+                    esse harum ipsa magni maiores, totam.</p>
             </div>
         </section>
     </main>
