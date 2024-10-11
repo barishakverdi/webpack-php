@@ -1,5 +1,5 @@
 <?php include '../layout/header.php'; ?>
-    <main class="text-black text-2xl bg-black text-white">
+    <main class="text-2xl text-white">
         <section>
             <div class="container">
                 <img src="<?= $assets ?>images/tadic.jpg" alt="" width="1280" height="853" class="mb-10">
