@@ -21,17 +21,10 @@ $protocol = isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] === 'on' || $_SERVER[
     <link rel="stylesheet" href="<?= $assets ?>icons.css">
     <script src="<?= $assets ?>bundle.js" type="module"></script>
     <script>
-        // Helper function
-        let domReady = (cb) => {
-        	document.readyState === 'interactive' || document.readyState === 'complete' ? cb() : document.addEventListener('DOMContentLoaded', cb);
-        };
-
-        domReady(() => {
-	        // Display body when DOM is loaded
-	        document.body.style.visibility = 'visible';
-        });
+        let domReady = (cb) => { document.readyState === 'interactive' || document.readyState === 'complete' ? cb() : document.addEventListener('DOMContentLoaded', cb);};
+        domReady(() => { document.body.style.visibility = 'visible'; });
     </script>
 </head>
-<body class="group/body overflow-x-hidden bg-[blue] h-full" style="visibility: hidden">
+<body class="group/body overflow-x-hidden bg-[yellow] h-full" style="visibility: hidden">
 <script>0</script>
 
