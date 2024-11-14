@@ -4,15 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "postinstall": "cp -R node_modules/starter-icons/webfonts public/assets/starter-icons",
     "dev": "webpack --watch --mode development",
-    "build:tailwind": "npx tailwindcss -i ./src/style/tailwind.css -o ./public/assets/tailwind.css --minify",
-    "build:style": "npx tailwindcss -i ./src/style/style.css -o ./public/assets/style.css --minify",
-    "watch:tailwind": "npx tailwindcss -i ./src/style/tailwind.css -o ./public/assets/tailwind.css --watch",
-    "watch:style": "npx tailwindcss -i ./src/style/style.css -o ./public/assets/style.css --watch",
-    "watch:sass": "sass --watch --style=compressed ./src/style/icons.scss ./public/assets/icons.css",
+    "build:tailwind": "npx tailwindcss -i ./dev/style/tailwind.css -o ./public/assets/tailwind.css --minify",
+    "build:style": "npx tailwindcss -i ./dev/style/style.css -o ./public/assets/style.css --minify",
+    "watch:tailwind": "npx tailwindcss -i ./dev/style/tailwind.css -o ./public/assets/tailwind.css --watch",
+    "watch:style": "npx tailwindcss -i ./dev/style/style.css -o ./public/assets/style.css --watch",
     "build": "npm run build:tailwind && npm run build:style && NODE_ENV=production webpack --config webpack.config.cjs --mode production",
-    "watch": "concurrently \"npm run dev\" \"npm run watch:tailwind\" \"npm run watch:style\" \"npm run watch:sass\""
+    "watch": "concurrently \"npm run dev\" \"npm run watch:tailwind\" \"npm run watch:style\""
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -27,6 +25,8 @@
     "mini-css-extract-plugin": "^2.9.0",
     "postcss": "^8.4.44",
     "postcss-loader": "^8.1.1",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.14",
     "sass": "^1.77.8",
     "sass-loader": "^16.0.0",
     "starter-icons": "1.1.5",

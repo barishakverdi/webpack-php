@@ -3,11 +3,19 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
-    entry: './src/script/script.js',
+    experiments: {
+        outputModule: true,
+        topLevelAwait: true
+    },
+    entry: './dev/script/script.js',
     output: {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'public/assets'),
         clean: false,
+        module: true,
+    },
+    resolve: {
+        extensions: ['.js', '.min.js'],
     },
     module: {
         rules: [
@@ -44,7 +52,7 @@ module.exports = {
             {
                 host: 'localhost',
                 port: 3000,
-                proxy: 'localhost:8080',
+                proxy: 'localhost:8081',
                 open: false,
                 files: [
                     {

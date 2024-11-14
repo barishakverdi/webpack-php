@@ -1,5 +1,5 @@
 <?php // public assets path
-$assets =  '/public/assets/';
+$assets =  'public/assets/';
 $protocol = isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] === 'on' || $_SERVER['HTTPS'] === 1) || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https' ? 'https://' : 'http://';
 ?>
 <!doctype html>
@@ -15,16 +15,17 @@ $protocol = isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] === 'on' || $_SERVER[
         /* to prevent Firefox FOUC, this must be here */
         let FF_FOUC_FIX;
     </script>
-    <base href="<?= $_SERVER['SERVER_NAME'] == "localhost" ? "localhost" : $protocol . $_SERVER['SERVER_NAME'] ?>">
-    <link rel="stylesheet" href="<?= $assets ?>tailwind.css">
-    <link rel="stylesheet" href="<?= $assets ?>style.css">
-    <link rel="stylesheet" href="<?= $assets ?>icons.css">
-    <script src="<?= $assets ?>bundle.js" type="module"></script>
+    <base href="<?= $_SERVER['SERVER_NAME'] == "localhost" ? "//localhost:" . $_SERVER['SERVER_PORT'] . "/" : $protocol . $_SERVER['SERVER_NAME'] . "/" ?>">
+    <link rel="stylesheet" href="<?= $assets ?>tailwind.css?v=<?= rand(0,1000) ?>">
+    <link rel="stylesheet" href="<?= $assets ?>style.css?v=<?= rand(0,1000) ?>">
+    <link rel="stylesheet" href="<?= $assets ?>icons.css?v=<?= rand(0,1000) ?>">
+    <script src="<?= $assets ?>bundle.js?v=<?= rand(0,1000) ?>" type="module"></script>
     <script>
         let domReady = (cb) => { document.readyState === 'interactive' || document.readyState === 'complete' ? cb() : document.addEventListener('DOMContentLoaded', cb);};
         domReady(() => { document.body.style.visibility = 'visible'; });
     </script>
 </head>
-<body class="group/body overflow-x-hidden bg-[yellow] h-full" style="visibility: hidden">
+<body class="group/body overflow-x-hidden bg-[red] h-full" style="visibility: hidden">
+<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT']; ?>
 <script>0</script>
 

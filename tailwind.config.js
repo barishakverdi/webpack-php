@@ -1,4 +1,6 @@
-module.exports = {
+import isBrowser from '@igorkowalczyk/is-browser';
+import tailwindScrollbar from 'tailwind-scrollbar';
+export default {
     content: ['./src/**/*.{php,js}', './*.php', './doktor/**/*.php', './includes/**/*.php', './public/**/*.html'],
     theme: {
         screens: {
@@ -131,8 +133,8 @@ module.exports = {
         },
     },
     plugins: [
-        require("@igorkowalczyk/is-browser"),
-        require('tailwind-scrollbar')({ preferredStrategy: 'pseudoelements', nocompatible: true })
+        isBrowser,
+        tailwindScrollbar({ preferredStrategy: 'pseudoelements', nocompatible: true })
     ],
 };
 
@@ -157,7 +159,7 @@ function generateZIndexRange(start, end) {
 // Generate Transition Durations
 function generateTransitionDurationRange(start, end) {
     const transitionDurationRange = {};
-    for (let i = start; i <= end; i+=50) {
+    for (let i = start; i <= end; i += 50) {
         transitionDurationRange[i] = (i + "ms").toString();
     }
     return transitionDurationRange;
@@ -166,7 +168,7 @@ function generateTransitionDurationRange(start, end) {
 // Generate Transition Delays
 function generateDelayRange(start, end) {
     const delayRange = {};
-    for (let i = start; i <= end; i+=50) {
+    for (let i = start; i <= end; i += 50) {
         delayRange[i] = (i + "ms").toString();
     }
     return delayRange;
