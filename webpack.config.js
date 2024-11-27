@@ -1,11 +1,17 @@
-const path = require('path');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import BrowserSyncPlugin from 'browser-sync-webpack-plugin';
+import browserSync from 'browser-sync';
 
-module.exports = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+export default {
     experiments: {
         outputModule: true,
-        topLevelAwait: true
+        topLevelAwait: true,
     },
     entry: './dev/script/script.js',
     output: {
@@ -13,6 +19,9 @@ module.exports = {
         path: path.resolve(__dirname, 'public/assets'),
         clean: false,
         module: true,
+        library: {
+            type: 'module',
+        },
     },
     resolve: {
         extensions: ['.js', '.min.js'],
@@ -56,25 +65,21 @@ module.exports = {
                 open: false,
                 files: [
                     {
-                        match: [
-                            '**/*.php',
-                            '**/*.css',
-                            '**/*.js'
-                        ],
-                        fn: function (event, file) {
-                            if (event === "change") {
-                                const bs = require('browser-sync').get('bs-webpack-plugin');
+                        match: ['**/*.php', '**/*.css', '**/*.js'],
+                        fn: async (event, file) => {
+                            if (event === 'change') {
+                                const bs = browserSync.get('bs-webpack-plugin');
                                 bs.reload();
                             }
-                        }
-                    }
-                ]
+                        },
+                    },
+                ],
             },
             {
                 reload: false,
                 notify: false,
             }
-        )
+        ),
     ],
     devtool: 'source-map',
     devServer: {

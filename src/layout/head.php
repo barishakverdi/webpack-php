@@ -26,6 +26,5 @@ $protocol = isset($_SERVER['HTTPS']) && ($_SERVER['HTTPS'] === 'on' || $_SERVER[
     </script>
 </head>
 <body class="group/body overflow-x-hidden bg-[red] h-full" style="visibility: hidden">
-<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT']; ?>
 <script>0</script>
-
+<?php echo $_SERVER['SERVER_NAME'] . ":" . $_SERVER['SERVER_PORT']; ?>

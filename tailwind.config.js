@@ -1,7 +1,9 @@
-import isBrowser from '@igorkowalczyk/is-browser';
-import tailwindScrollbar from 'tailwind-scrollbar';
+import isBrowser from "@igorkowalczyk/is-browser";
+import tailwindScrollbar from "tailwind-scrollbar";
+import plugin from "tailwindcss";
+
 export default {
-    content: ['./src/**/*.{php,js}', './*.php', './doktor/**/*.php', './includes/**/*.php', './public/**/*.html'],
+    content: ["./src/**/*.php", "./dev/**/*.{.css, .scss, .js}", "./*.php"],
     theme: {
         screens: {
             'min-3xl': {'min': '1681px'},
@@ -101,10 +103,9 @@ export default {
                 center: true,
                 padding: "24px",
             },
-            borderRadius: {
-                xl: '20px',
-                lg: '12px'
-            },
+            fontSize: (theme) => ({ ...theme("spacing") }),
+            borderRadius: (theme) => ({ ...theme("spacing") }),
+            borderWidth: (theme) => ({ ...theme("spacing") }),
             opacity: generateOpacityRange(1, 100),
             zIndex: generateZIndexRange(1, 100),
             transitionDuration: generateTransitionDurationRange(100, 1000),
@@ -134,7 +135,16 @@ export default {
     },
     plugins: [
         isBrowser,
-        tailwindScrollbar({ preferredStrategy: 'pseudoelements', nocompatible: true })
+        tailwindScrollbar({ preferredStrategy: "pseudoelements", nocompatible: true }),
+        plugin(function({ addUtilities }) {
+            addUtilities({
+                ".flex-center": {
+                    "display": "flex",
+                    "align-items": "center",
+                    "justify-content": "center",
+                },
+            });
+        }),
     ],
 };
 

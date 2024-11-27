@@ -9,7 +9,7 @@
     "build:style": "npx tailwindcss -i ./dev/style/style.css -o ./public/assets/style.css --minify",
     "watch:tailwind": "npx tailwindcss -i ./dev/style/tailwind.css -o ./public/assets/tailwind.css --watch",
     "watch:style": "npx tailwindcss -i ./dev/style/style.css -o ./public/assets/style.css --watch",
-    "build": "npm run build:tailwind && npm run build:style && NODE_ENV=production webpack --config webpack.config.cjs --mode production",
+    "build": "npm run build:tailwind && npm run build:style && NODE_ENV=production webpack --config webpack.config.js --mode production",
     "watch": "concurrently \"npm run dev\" \"npm run watch:tailwind\" \"npm run watch:style\""
   },
   "devDependencies": {
@@ -39,7 +39,9 @@
   "dependencies": {
     "@fancyapps/ui": "^5.0.36",
     "@igorkowalczyk/is-browser": "^5.0.4",
+    "choices.js": "^11.0.2",
     "gsap": "^3.12.5",
+    "imask": "^7.6.1",
     "scrollreveal": "^4.0.9",
     "swiper": "^11.1.9",
     "tailwind-scrollbar": "^3.1.0"
